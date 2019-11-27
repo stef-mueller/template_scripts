@@ -5,9 +5,11 @@
 INPUT=$1
 # Chromosome to operate on
 CHROM=$2
+# Output directory
+OUTPUTDIR=$3
 
 # --- create other variables
-OUTPUT=$(basename $INPUT | sed "s/.bam/$CHROM.g.vcf.gz/g")
+OUTPUT=$(basename $INPUT | sed "s/.bam/.chr${CHROM}.g.vcf.gz/g")
 
 # --- echo parameter to standard output
 echo "#---------------------------------------------------------------"
@@ -16,6 +18,7 @@ echo "#SCRIPT: $0"
 echo "#INPUT FILE: $INPUT"
 echo "#INPUT CHROM: $CHROM"
 echo "#OUTPUT NAME: $OUTPUT" 
+echo "#OUTPUT FILE: $OUTPUTDIR/$OUTPUT" 
 echo "#---------------------------------------------------------------"
 
 # --- perform loop: simple echo statement to demonstarte usage
@@ -36,6 +39,6 @@ echo "  -O $OUTPUT "
 #    -L $CHROM \
 #    -D "$DBSNP" \
 #    -ERC GVCF \
-#    -O "${OUTPUT}.${CHROM}.g.vcf.gz"
+#    -O "${OUTPUTDIR}/${OUTPUT}.chr${CHROM}.g.vcf.gz"
 
 

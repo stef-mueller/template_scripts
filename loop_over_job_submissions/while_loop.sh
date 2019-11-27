@@ -9,11 +9,10 @@ FILELIST="tmp.file.list.txt"
 OUTPUTDIR="outpath"
 
 
-for CHR in ${chromosome[@]}
+while read FILE
 do
-    # echo $CHR
-    while read FILE
+    for CHR in ${chromosome[@]}
     do
         ./example_script.sh $FILE $CHR $OUTPUTDIR
-    done < $FILELIST
-done
+    done
+done < $FILELIST
