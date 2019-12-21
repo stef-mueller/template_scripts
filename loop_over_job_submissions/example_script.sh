@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+# --- Script objective
+echo "--------------------------------------------------------------------------"
+echo "Sample script on using a while loop to loop over an input file list and"
+echo "perform same analysis. Here, an example to perform genetic analysis"
+echo "for individual chromosomes."
+echo "--------------------------------------------------------------------------"
+echo
+
+
+
 # --- get input from command line
 # Input file
 INPUT=$1
